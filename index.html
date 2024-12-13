@@ -29,14 +29,148 @@
         <img src="twitter.png" alt="Twitter" style="height: 30px; width: 30px;">
       </a>
       <a href="https://mail.google.com/mail/u/0/?hl=en-GB#inbox" target="_blank">
-        <img src="email.png" alt="Email" style="height: 30px; width: 40px;">
+        <img src="email.png" alt="Email" style="height: 30px; width: 30px;">
       </a>
       <a href="https://web.whatsapp.com/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background-color: blue; border-radius: 30px; color: white; font-family: Arial, sans-serif; font-size: 12px; padding: 3px; text-decoration: none; height: 30px;">
         <img src="whatsapp.png" alt="WhatsApp" style="margin-right: 5px; height: 20px; width: 20px;"> Subscribe
       </a>
+    </div> </div>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .slideshow-container {
+      max-width: 600px;
+      position: relative;
+      margin: auto;
+    }
+
+    .mySlides {
+      display: none;
+      position: relative;
+    }
+
+    .mySlides img {
+      width: 100%;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 3px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 12px;
+      position: absolute;
+      bottom: 8px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .dot-container {
+      text-align: center;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 5px 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .fade {
+      animation: fade 1.5s;
+    }
+  </style>
+
+<body>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="img1.jpg" alt="Slide 1">
+      <div class="text">LET'S JOIN</div>
     </div>
 
+    <div class="mySlides fade">
+      <img src="img2.jpg" alt="Slide 2">
+      <div class="text">OUR</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img3.jpg" alt="Slide 3">
+      <div class="text">COMMUNITY !!!</div>
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
   </div>
+
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function changeSlide(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
 
   <div style="background: #000; padding: 10px;">
     <video controls style="width: 100%; max-height: 500px;">
