@@ -1,0 +1,58 @@
+.dashboard {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+}
+
+.card {
+  background-color: #daffcd;
+  border-radius: 20px;
+  padding: 1.5em;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  background-color: #daffcd;
+  padding: 0.4em;
+  border-radius: 12px;
+}
+
+.card canvas {
+  margin: 1em 0;
+}
+
+.label-top,
+.label-bottom {
+  position: absolute;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 4px #000;
+}
+
+.label-top {
+  top: 42%;
+  right: 15%;
+}
+
+.label-bottom {
+  bottom: 70%;
+  left: 15%;
+}
+
+.card2 {
+  background-color: #daffcd;
+  border-radius: 20px;
+  padding: 2em;
+  width: 600px;
+  height: 470px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
